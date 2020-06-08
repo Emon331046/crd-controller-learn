@@ -43,15 +43,15 @@ type Cluster struct {
 
 type ClusterSpec struct {
 	BookDeploymentName string `json:"bookDeploymentName"`
-	BookReplicas       string `json:"bookDeploymentName"`
+	BookReplicas       *int32 `json:"bookReplicas"`
 }
 
 type ClusterStatus struct {
-	BookAvailableReplicas string `json:"bookAvailableReplicas"`
+	BookAvailableReplicas int32 `json:"bookAvailableReplicas"`
 	// ObservedGeneration is the most recent generation observed for this Cluster. It corresponds to the
 	// Cluster's generation, which is updated on mutation by the API Server.
 	// +optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

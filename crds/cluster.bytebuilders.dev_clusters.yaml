@@ -41,13 +41,18 @@ spec:
             properties:
               bookDeploymentName:
                 type: string
+              bookReplicas:
+                format: int32
+                type: integer
             required:
             - bookDeploymentName
+            - bookReplicas
             type: object
           status:
             properties:
               bookAvailableReplicas:
-                type: string
+                format: int32
+                type: integer
               observedGeneration:
                 description: ObservedGeneration is the most recent generation observed
                   for this Cluster. It corresponds to the Cluster's generation, which

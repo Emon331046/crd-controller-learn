@@ -1,6 +1,7 @@
 apiVersion: cluster.bytebuilders.dev/v1alpha1
 kind: Cluster
 metadata:
-  name: abc2
+  name: abc
 spec:
-  slackChannel: general
+  bookDeploymentName: abc
+  bookReplicas: 2
